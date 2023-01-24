@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DownloadIcon from "../components/icons/DownloadIcon.astro";
+---
+
+<Layout title="cristodca: Web Developer">
+  <div class="container mx-auto py-32 px-4">
+    <div class="flex flex-col items-center">
+      <h1 class="main-title">cristodca</h1>
+      <h2 class="subtitle">Web Developer</h2>
+      <lottie-player
+        src="/animations/web-developer.json"
+        class="max-w-lg mt-32"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay></lottie-player>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div class="main-container mx-auto px-4 py-32">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="flex flex-col justify-center items-start">
+          <h2 class="title text-center mb-6">About me 🐝</h2>
+          <p class="text">
+            I'm a 22 years old web developer. I like to be on Internet.
+          </p>
+          <h3 class="subtitle mt-8">
+            Profesional experience 😎
+          </h3>
+          <p class="text">
+            I've been working on web development since <b>2019</b>. Among all this years I learned a lot of technologies like <b>React, Tailwind, NextJS</b>, Angular and recently Astro.
+          </p>
+          <p class="text">
+            I have <b>basic backend knownledge</b> but It's not my speciallity, I can work with NodeJS/Express and DB like SQL, Postgress and Firebase.
+          </p>
+          <p class="text">
+            Currently I'm not looking for job offers, but feel free to take a look to my Resume. 
+          </p>
+
+          <div class="flex w-full justify-start">
+            <button class="button button-primary mt-8">
+              Download CV <div class="w-6 h-6"><DownloadIcon /> </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <lottie-player
+            src="/animations/reading-science.json"
+            class="max-w-lg mt-32"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
