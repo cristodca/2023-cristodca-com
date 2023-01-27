@@ -6,13 +6,13 @@
 
 @layer components {
   .main-title {
-    @apply text-danger font-bold text-7xl mb-8;
+    @apply text-danger font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-8;
   }
   .title {
-    @apply text-danger font-bold text-5xl mb-8;
+    @apply text-danger font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8;
   }
   .subtitle {
-    @apply text-primary font-medium text-3xl mb-6;
+    @apply text-primary font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6;
   }
   .text {
     @apply text-dark font-normal text-lg mb-4;
