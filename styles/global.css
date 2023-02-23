@@ -34,8 +34,21 @@
   .blog-container {
     @apply max-w-[60ch] mx-auto px-4 py-16;
   }
+  .blog-container h1 {
+    @apply title;
+  }
+  .blog-container h2 {
+    @apply subtitle mt-16;
+  }
+  .blog-container p {
+    @apply text;
+  }
 }
 
 * {
   font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  scroll-behavior: smooth;
 }
