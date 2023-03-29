@@ -2,6 +2,7 @@
 title: 'Lo nuevo de Astro 2.0'
 pubDate: 2022-02-23
 description: 'Descubre los beneficios de Astro y cómo lo llevan al siguiente nivel en la versión 2.0'
+slug: 'astro-2-0'
 author: 'cristodca'
 image:
     url: 'https://astro.build/assets/blog/astro-1-release-update/cover.jpeg' 

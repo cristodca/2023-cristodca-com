@@ -4,7 +4,15 @@ import DownloadIcon from "../components/icons/DownloadIcon.astro";
 import WavePortfolio from "../components/icons/WavePortfolio.astro";
 import WavePortfolioTwo from "../components/icons/WavePortfolioTwo.astro";
 
-import '../../styles/animations-scroll.css'
+import "../../styles/animations-scroll.css";
+
+interface Frontmatter {
+  title: string;
+  description: string;
+  slug: string;
+}
+
+const posts = await Astro.glob<Frontmatter>("./posts/*.md");
 ---
 
 <Layout title="cristodca: Web Developer">
@@ -28,24 +36,25 @@ import '../../styles/animations-scroll.css'
     <div class="main-container mx-auto px-4 py-32">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="flex flex-col justify-center items-start">
-          <h2 class="title text-center mb-6">About me 🐝</h2>
+          <h2 class="title text-center mb-6">Sobre mí 🐝</h2>
           <p class="text">
-            I'm a 22 years old web developer. I like to be on Internet.
+            Soy un programador de 22 años. Me gusta pasar tiempo en Internet.
           </p>
-          <h3 class="subtitle mt-8">Profesional experience 😎</h3>
+          <h3 class="subtitle mt-8">Experiencia profesional 😎</h3>
           <p class="text">
-            I've been working on web development since <b>2019</b>. Among all
-            this years I learned a lot of technologies like <b
+            He trabajado en el desarrollo web desde <b>2019</b>. Durante todos
+            estos años he aprendido muchas tecnologías como <b
               >React, Tailwind, NextJS</b
-            >, Angular and recently Astro.
+            >, Angular y recientemente Astro.
           </p>
           <p class="text">
-            I have <b>basic backend knownledge</b> but It's not my speciallity, I
-            can work with NodeJS/Express and DB like SQL, Postgress and Firebase.
+            Tengo <b>conocimientos básicos de Backend</b>, pero no es mi
+            especialidad. Puedo trabajar con NodeJS/Express y Bases de datos
+            tipo SQL (MySQL, PostgreSQL) o Firebase.
           </p>
           <p class="text">
-            Currently I'm not looking for job offers, but feel free to take a
-            look to my Resume.
+            Actualmente no estoy en búsqueda de un trabajo, pero siéntente libre
+            de darle un vistazo a mi CV.
           </p>
 
           <div class="flex w-full justify-start">
@@ -54,7 +63,7 @@ import '../../styles/animations-scroll.css'
               download
               class="button button-primary mt-8"
             >
-              Download CV <div class="w-6 h-6"><DownloadIcon /></div>
+              Descargar CV <div class="w-6 h-6"><DownloadIcon /></div>
             </a>
           </div>
         </div>
@@ -86,24 +95,46 @@ import '../../styles/animations-scroll.css'
             autoplay></lottie-player>
         </div>
         <div class="flex flex-col justify-center items-start">
-          <h2 class="title">Portfolio</h2>
-          <p class="text">
-            Yup, this are some of my projects:
-          </p>
-          
+          <h2 class="title">Portafolio</h2>
+          <p class="text">Estos son mis proyectos actuales:</p>
+
           <div class="grid grid-cols-2 gap-4">
-            <div class="aspect-square rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-primary hover:bg-opacity-20 shadow p-2">
-              <img src="/images/contalink-icon.png" alt="Contalink" loading="lazy" decoding="async" class="w-1/2">
-              <p class="text mb-0 text-center">
-                Contalink
-              </p>
-            </div>
-            <div class="aspect-square rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-primary hover:bg-opacity-20 shadow p-2">
-              <img src="/images/logo-negro-100.png" alt="Hasta la luna Studios" loading="lazy" decoding="async" class="mb-4">
-              <p class="text mb-0 text-center">
-                Hasta la luna Studios
-              </p>
-            </div>
+            <a
+              href="https://www.contalink.com?utm_source=cristo&utm_medium=cristo&utm_campaign=portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="aspect-square rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-primary hover:bg-opacity-20 shadow p-2"
+              >
+                <img
+                  src="/images/contalink-icon.png"
+                  alt="Contalink"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-1/2"
+                />
+                <p class="text mb-0 text-center">Contalink</p>
+              </div></a
+            >
+            <a
+              href="https://hastalaluna-testing.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="aspect-square rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-primary hover:bg-opacity-20 shadow p-2"
+              >
+                <img
+                  src="/images/logo-negro-100.png"
+                  alt="Hasta la luna Studios"
+                  loading="lazy"
+                  decoding="async"
+                  class="mb-4"
+                />
+                <p class="text mb-0 text-center">Hasta la luna Studios</p>
+              </div></a
+            >
           </div>
         </div>
       </div>
@@ -113,32 +144,24 @@ import '../../styles/animations-scroll.css'
 
   <div id="blog">
     <div class="main-container pt-0">
-      <h2 class="title mb-20">
-        Dale un vistazo a mi blog
-      </h2>
+      <h2 class="title mb-20">Dale un vistazo a mi blog</h2>
+      <ul>
+        <!-- post.frontmatter.title will be `string`! -->
+      </ul>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        <a href="/posts/novedades-nextjs-13-2">
-          <div class="p-4 rounded-2xl shadow">
-            <h3 class="subtitle">
-              Novedades de NextJS 13.2
-            </h3>
-            <p class="text">
-              Repasemos juntos las novedades de NextJS 13.2 con un ejemplo básico
-            </p>
-          </div>
-        </a>
-
-        <a href="/posts/astro-2-0">
-          <div class="p-4 rounded-2xl shadow">
-            <h3 class="subtitle">
-              Lo nuevo de Astro 2.0
-            </h3>
-            <p class="text">
-              Descubre los beneficios de Astro y cómo lo llevan al siguiente nivel en la versión 2.0
-            </p>
-          </div>
-        </a>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+      >
+        {
+          posts.map((post) => (
+            <a href={`/posts/${post.frontmatter.slug}`}>
+              <div class="p-4 rounded-2xl shadow hover:bg-primary hover:bg-opacity-20 h-full flex flex-col justify-between">
+                <h3 class="subtitle">{post.frontmatter.title}</h3>
+                <p class="text line-clamp-3">{post.frontmatter.description}</p>
+              </div>
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>

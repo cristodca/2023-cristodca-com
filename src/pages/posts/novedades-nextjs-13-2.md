@@ -3,6 +3,7 @@ title: 'Novedades de NextJS 13.2'
 pubDate: 2022-02-23
 description: 'Repasemos juntos las novedades de NextJS 13.2 con un ejemplo básico'
 author: 'cristodca'
+slug: 'novedades-nextjs-13-2'
 image:
     url: 'https://astro.build/assets/blog/astro-1-release-update/cover.jpeg' 
     alt: 'The Astro logo with the word One.'
