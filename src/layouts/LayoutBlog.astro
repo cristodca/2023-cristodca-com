@@ -1,5 +1,5 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Navbar from '../components/Navbar';
 
 export interface Props {
 	title: string;
@@ -22,7 +22,7 @@ import './../../styles/global.css'
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" async></script>
 	</head>
 	<body class="bg-light">
-    <Navbar />
+    <Navbar client:load />
     <main>
       <div class="blog-container">
         <slot />
