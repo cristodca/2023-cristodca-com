@@ -18,6 +18,10 @@
     @apply text-dark font-normal text-lg mb-4;
   }
 
+  .bg-glass {
+    @apply bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-50;
+  }
+
   .button {
     @apply flex items-center justify-center gap-2 px-6 py-3 rounded-[10px]; 
   }
